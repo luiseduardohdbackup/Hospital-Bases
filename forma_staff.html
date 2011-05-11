@@ -1,0 +1,131 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title> Wellmeadows Hospital</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+<script src="javascript/jquery.js" type="text/javascript"></script>
+<script src="javascript/slider.js" type="text/javascript"></script>
+<script src="javascript/application.js" type="text/javascript"></script>
+</head>
+<body>
+<?php
+
+	/*mysql_connect es un metodo especial para realizar la conexion a la BD,
+	los parametros pueden ser revisados en www.php.net*/
+	$conexion =  mysql_connect('localhost', 'root', 'root');
+	//Se establece el charset para la conexion
+	mysql_set_charset('utf8',$conexion);
+
+	//Verificando que la conexion con el servidor con mysql se haya realizado con exito
+	if (!$conexion) {
+		die('No pudo conectarse: ' . mysql_error());
+	}
+	//Abrir base de datos
+	$conexion_base = mysql_select_db('hospital', $conexion);
+
+	//Verificando que la conexion se haya hecho a la BD
+	if (!$conexion_base) {
+		die ('No se encuentra la base de datos seleccionada : ' . mysql_error());
+	}
+?>
+
+<div id="wrapper">
+	<div id="menu">
+		<ul>
+			<li class="home"><a href="home.php">Home</a></li>
+			<li class="staff"><a href="reporte_forma_staff.php">Staff</a></li>
+			<li class="wards"><a href="wards.php">Wards</a></li>
+			<li class="patients"><a href="#">Patients</a></li>
+			<li class="contact"><a href="#">Contact</a></li>
+		</ul>
+	</div>
+	<!-- end #menu -->
+	<div id="header">
+		<div id="logo">
+			<div id="s3slider">
+			       <ul id="s3sliderContent">
+			          <li class="s3sliderImage">
+									<img src="images/img06.jpg" alt="1" />
+			              <span>Your health is our first priority </span>
+
+			          </li>
+			          <li class="s3sliderImage">
+									<img src="images/Slider1.jpg" alt="2" />
+		              <span>Your health is our first priority </span>
+			          </li>
+			          <li class="s3sliderImage">
+									<img src="images/Slider2.jpg" alt="3" />
+		              <span>Your health is our first priority </span>
+
+			          </li>
+			          <li class="s3sliderImage">
+									<img src="images/Slider3.jpg" alt="4" />
+		              <span>Your health is our first priority </span>
+			          </li>
+			          <div class="clear s3sliderImage"></div>
+			       </ul>
+			</div><!-- s3slider -->
+
+		</div>
+	</div>
+	<!-- end #header -->
+  <div id="page">
+  <div id="page-bgtop">
+  <div id="page-bgbtm">
+    <div id="content">
+
+          <form method="get" action="reporte_forma_staff.php">
+            <div id="form">
+              <p>
+              	<label>Qualification: </label>
+              	<input type="text" name="qualification" id="search-text" value="" />
+							</p>
+							<p>
+              	<label>Position: </label>
+              	<input type="text" name="position" id="search-text" value="" />
+							</p>
+              <input type="submit" id="search-submit" value="Buscar" />
+            </div>
+          </form>
+    <div style="clear: both;">&nbsp;</div>
+    </div>
+    <!-- end #content -->
+    <div id="sidebar">
+      <ul>
+        <li>
+          <div id="search" >
+          <form method="get" action="../reporte.php">
+            <div>
+              <input type="text" name="fname" id="search-text" value="" />
+              <input type="submit" id="search-submit" value="GO" />
+            </div>
+          </form>
+          </div>
+          <div style="clear: both;">&nbsp;</div>
+        </li>
+        <li>
+          <h2>Aliquam tempus</h2>
+          <p>Mauris vitae nisl nec metus placerat perdiet est. Phasellus dapibus semper consectetuer hendrerit.</p>
+        </li>
+        <li>
+          <h2>Categories</h2>
+          <ul>
+            <li><a href="#">Aliquam libero</a></li>
+            <li><a href="#">Consectetuer adipiscing elit</a></li>
+            <li><a href="#">Metus aliquam pellentesque</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- end #sidebar -->
+    <div style="clear: both;">&nbsp;</div>
+  </div>
+  </div>
+  </div>
+  <!-- end #page -->
+</div>
+<div id="footer">
+  <p>Creado por: Rogelio Guzman, Miguel Gonzalez, Alfonso Reyes y Gerardo Garcia</p>
+</div>
+</body>
+</html>
+

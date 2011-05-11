@@ -1,0 +1,239 @@
+set dateformat dmy;
+
+select * from staff where staffNum=1
+select * from workExperience where staffNum=1
+select * from qualifications where staffNum=1
+
+--StaffNum, Fname, Lname, Address, Telephone, BirthDate, Gender, InsuranceNumber, Position, CurrentSalary, SalaryScale, TypeOfEmployment, HoursPerWeek
+
+insert into Staff values(1,'Yoanna', 'House', '450 Private Drive, Leith, Edinburgh', '01643-56269', '09-04-1980', 'Female',
+'GR654691P', 'Charge Nurse', '18760', '1B scale', 'P',  37.5);
+
+insert into Staff values(2,'Andrew', 'Garfield', '530 Greenshore, Leith, Edinburgh', '01245-09865', '20-08-1983', 'Male',
+'VD984342F', 'Medical Director', '30780', '1A scale', 'P',  35);
+
+insert into Staff values(3,'Naima', 'Mora', '120 Fibula, Leith, Edinburgh', '01995-01123', '01-03-1984', 'Female',
+'ER998465C', 'Nurse', '15200', '1B scale', 'P',  38);
+
+insert into Staff values(4,'Jackson', 'Pollock', '250 Pauper, Temple, Edinburgh', '01196-43427', '28-01-1962', 'Male',
+'HJ560092D', 'Personal Officer', '23400', '1B scale', 'T',  25);
+
+insert into Staff values(5,'Ann', 'Ward', '230 Woodway, Temple, Edinburgh', '01245-09865', '04-03-1983', 'Female',
+'IK875311T', 'Nurse', '17500', '1B scale', 'P',  40);
+
+insert into Staff values(6,'Gregory', 'House', '210 Elm Street, Temple, Edinburgh', '01912-99182', '15-05-1959', 'Male',
+'AS223415F', 'Doctor', '35930', '1A scale', 'P',  35.5);
+
+insert into Staff values(7,'Allison', 'Harvard', '420 Great Willow, Currie, Edinburgh', '08234-11842', '08-01-1982', 'Female',
+'UQ91134W', 'Doctor', '33510', '1A scale', 'P',  32);
+
+insert into Staff values(8,'Vito', 'Acconci', '540 Marbe Lane, Currie, Edinburgh', '01204-56346', '24-01-1960', 'Male',
+'ZW12400V', 'Janitor', '7160', '1D scale', 'T',  38.5);
+
+insert into Staff values(9,'Nicole', 'Fox', '170 Sugar Street, Balerno, Edinburgh', '01245-09865', '06-03-1981', 'Female',
+'OL338546B', 'Nurse', '16800', '1C scale', 'P',  34);
+
+insert into Staff values(10,'David', 'Nash', '490 Underwood, Balerno, Edinburgh', '01923-22457', '14-11-1955', 'Male',
+'OE093536Y', 'Janitor', '8000', '1D scale', 'P',  42.5);
+
+insert into Staff values(11,'Marina', 'Abramovic', '560 Castle, Balerno, Edinburgh', '01765-99132', '07-02-1979', 'Female',
+'ET856724N', 'Charge Nurse', '18120', '1B scale', 'P',  36);
+
+insert into Staff values(12,'Rebecca', 'Black', '540 Friday Ave, Silverburn, Edinburgh', '01878-91345', '10-08-1972', 'Female',
+'UY445797L', 'Janitor', '6660', '1D scale', 'T',  44);
+
+insert into Staff values(13,'Mario', 'Marz', '220 Pompidou, Silverburn, Edinburgh', '01881-54541', '20-07-1982', 'Male',
+'PK123642U', 'Doctor', '29470', '1A scale', 'T',  32);
+
+insert into Staff values(14,'Gilberto', 'Zorio', '770 Littlebay, Silverburn, Edinburgh', '01487-22457', '31-10-1968', 'Male',
+'WF349765G', 'Janitor', '9000', '1D scale', 'P',  31.5);
+
+insert into Staff values(15,'Chris', 'Burden', '360 Guggenheim, Silverburn, Edinburgh', '01001-82727', '16-04-1958', 'Male',
+'DU00119R', 'Personal Officer', '21400', '1B scale', 'T',  29.5);
+
+--QualificationID, DateOfQualification, type, Institution, StaffNo
+INSERT Qualifications VALUES (1,'3-1-1990','Nurse','Tec',1);
+INSERT Qualifications VALUES (2,'2-2-1989','Pedriatic','Tec',2);
+INSERT Qualifications VALUES (3,'6-3-1988','Surgeon','UANL',3);
+INSERT Qualifications VALUES (4,'9-4-1980','neurosurgeon','UNAM',4);
+INSERT Qualifications VALUES (5,'7-4-1985','Nurse','UVM',1);
+INSERT Qualifications VALUES (6,'1-3-1995','Cardiologist','UDEM',1);
+INSERT Qualifications VALUES (7,'12-2-2000','Anesthesiologist','Tec',7);
+INSERT Qualifications VALUES (8,'8-2-2002','Pediatric','Tec',8);
+INSERT Qualifications VALUES (9,'12-2-2000','ophthalmologist','UANL',9);
+INSERT Qualifications VALUES (10,'5-2-1995','otolaryngologist','UDEM',10);
+
+
+--WorkExerienceID, Name, Position, StartDate, FinishDate, Contract, TypeSalary, StaffNo
+INSERT WorkExperience VALUES(1, 'Hospital AB', 'Jefe', '2-09-1997', '2-09-1997', 'Dos años', 'Honorarios', 1);
+INSERT WorkExperience VALUES(2, 'Hospital San Jose', 'Enfermero', '2-09-1997', '2-09-1997', 'Dos años', 'Honorarios', 2);
+INSERT WorkExperience VALUES(3, 'Hospital Oca', 'Intendente', '2-09-1997', '2-09-1997', 'Dos años', 'Honorarios', 3);
+INSERT WorkExperience VALUES(4, 'Hospital Der', 'Doctor', '2-09-1997', '2-09-1997', 'Dos años', 'Honorarios', 4);
+INSERT WorkExperience VALUES(5, 'Hospital San Juan', 'Gerente', '2-09-1997', '2-09-1997', 'Dos años', 'Honorarios', 5);
+INSERT WorkExperience VALUES(6, 'Hospital Uni', 'Doctor', '2-09-1997', '2-09-1997', 'Dos años', 'Honorarios', 6);
+INSERT WorkExperience VALUES(7, 'Hospital BD', 'Enfermero', '2-09-1997', '2-09-1997', 'Dos años', 'Honorarios', 7);
+INSERT WorkExperience VALUES(8, 'Hospital AT', 'Jefe', '2-09-1997', '2-09-1997', 'Dos años', 'Honorarios', 8);
+INSERT WorkExperience VALUES(9, 'Hospital YI', 'Enfermero', '2-09-1997', '2-09-1997', 'Dos años', 'Honorarios', 9);
+INSERT WorkExperience VALUES(10, 'Hospital LES', 'Intendente', '2-09-1997', '2-09-1997', 'Dos años', 'Honorarios', 10);
+
+
+
+--#INSERTS WARD
+Insert into Ward values (1, 'Orthopaedic','Block A', 42, 771, 3, 6);
+Insert into Ward values (2, 'Surgery','Block B', 12, 231, 5, 6);
+Insert into Ward values (3, 'Maternity','Block C', 22, 349, 1, 6);
+Insert into Ward values (4, 'Psychiatric','Block D', 592, 666, 2, 6);
+Insert into Ward values (5, 'Geriartics','Block E', 12, 956, 4, 5);
+Insert into Ward values (6, 'Pediatrics','Block F', 20, 278, 7, 5);
+Insert into Ward values (7, 'Intensive Care','Block G', 15, 182, 8, 5);
+Insert into Ward values (8, 'Burn Victims','Block H', 10, 274, 9, 5);
+Insert into Ward values (9, 'Emergency','Block I', 25, 547, 10, 6);
+Insert into Ward values (10, 'Trauma Unit','Block J', 15, 364, 11, 5);
+
+--#INSERTS SUPPLIERS
+-- quitar los nombres de persona y poner nombres de negocios
+INSERT INTO Suppliers VALUES (1,'Compañia ABC','23 Miami Rd','compañiaABC@hotmail.com','8310-14-56','8310-14-50');
+INSERT INTO Suppliers VALUES (2,'Company B','25 Minnesota Rd','companyB@hotmail.com','8310-70-70','8310-70-01');
+INSERT INTO Suppliers VALUES (3,'Company C','34 Fashion Rd','companyC@gmail.com','8300-04-04','8300-03-03');
+INSERT INTO Suppliers VALUES (4,'Medicos A','21 Main Rd','mediA@hotmail.com','8310-99-55','8310-99-66');
+INSERT INTO Suppliers VALUES (5,'InstMedicos','45 Fifth Rd','inst_med@hotmail.com','8373-13-99','8373-14-11');
+INSERT INTO Suppliers VALUES (6,'Company Dia','60 Hidalgo Rd','compDia@hotmail.com','8310-10-11','8310-10-12');
+INSERT INTO Suppliers VALUES (7,'Compañia SEA','56 Deer Rd','comp_SEA@gmail.com','8373-10-25','8373-10-56');
+INSERT INTO Suppliers VALUES (8,'Medicine Company','23 Chicago Rd','med_comp@hotmail.com','8300-00-01','8300-00-22');
+INSERT INTO Suppliers VALUES (9,'MediCA','56 Dig Rd','medica@hotmail.com','8373-11-12','8373-11-33');
+INSERT INTO Suppliers VALUES (10,'Company EME','43 Sloppy Rd','cp_eme@gmail.com','8373-59-25','8373-60-25');
+
+
+--#INSERTS SUPPLIES
+-- el punto de reorden debe ser numero y su contenido debe ser numerico
+
+INSERT INTO Supplies VALUES (1,'syringes','surgical - a540',123,'High',1.00, 1);
+INSERT INTO Supplies VALUES (2,'sterile dressings','surgical - size M',26,'Medium',30.00, 1);
+INSERT INTO Supplies VALUES (3,'plastic bags','nonsurgical - trashbags ',478,'Low',0.36, 1);
+INSERT INTO Supplies VALUES (4,'aprons','nonsurgical - individual, size S',5,'High',120.00, 2);
+INSERT INTO Supplies VALUES (5,'tissues','nonsurgical - disposable',24,'Low',0.15, 2);
+INSERT INTO Supplies VALUES (6,'sterile gloves','surgical - latex size XS',28,'High',2.00, 2);
+INSERT INTO Supplies VALUES (7,'mops','nonsurgical - cleaning material',6,'Low',30.00, 3);
+INSERT INTO Supplies VALUES (8,'scalpel','surgical - disposable, size 7',9,'High',150, 3);
+INSERT INTO Supplies VALUES (9,'mouth guards','nonsurgical - disposable',12,'Low',15.00,4);
+INSERT INTO Supplies VALUES (10,'srubs','surgical - disposable size 10',56,'Medium',7.00,4);
+
+insert into NextOfKin values (1, 'Sean Kingston', '198 Valley Street', '348753369086', 'Husband');
+insert into NextOfKin values (2, 'Patricia Ruiz', '23 Ocean Road', '366579087611', 'Aunt');
+insert into NextOfKin values (3, 'Fanny Diaz', '43 Palm Springs', '114456328078', 'Sister');
+insert into NextOfKin values (4, 'Anny Pitt', '22 Wall Street', '779554361087', 'Mother');
+insert into NextOfKin values (5, 'Chandler Tribiani', '943 Oak Street', '776549834235', 'Father');
+insert into NextOfKin values (6, 'Pedro Garza', '95 Alley Valley', '554437698761', 'Uncle');
+insert into NextOfKin values (7, 'Patty Barrymore', '454 Cielo Drive', '665430086649', 'Neighbor');
+insert into NextOfKin values (8, 'Hermione Granger', '657 Clock Alley', '321765339863', 'Friend');
+insert into NextOfKin values (9, 'Ron Weasley', '213 North Tower', '432887543209', 'Cousin');
+insert into NextOfKin values (10, 'Peter Pollock', '92 Wonderland Alley', '153477669024', 'Brother');
+
+
+insert into Patient values (1, 'Anne', 'Hataway', '198 Valley Street', '348753369086', '14-11-1990', 'F', 'Married', '23-03-2011', 1);
+insert into Patient values (2, 'Lucy', 'Ruiz', '21 Palm Springs', '264809003432', '26-05-1992', 'F', 'Single', '25-03-2011', 2);
+insert into Patient values (3, 'Aaron', 'Diaz', '43 Palm Springs', '114456328078', '16-05-1987', 'M', 'Single', '07-04-2005', 3);
+insert into Patient values (4, 'Brad', 'Pitt', '22 Wall Street', '779554361087', '18-07-1989', 'M', 'Single', '01-01-2011', 4);
+insert into Patient values (5, 'Joey', 'Tribiani', '52 Diagon Alley', '374529975945', '5-03-1964', 'M', 'Married', '24-12-2010', 5);
+insert into Patient values (6, 'Monica', 'Sandler', '324 Farenheit Street', '113705432178', '6-12-1973', 'F', 'Married', '21-11-2010', 6);
+insert into Patient values (7, 'Gerald', 'Buttler', '453 Cielo Drive', '875443278976', '27-08-1956', 'M', 'Single', '07-09-2010', 7);
+insert into Patient values (8, 'Peter', 'Ferrari', '945 Journal Street', '906734184609', '16-05-1960', 'M', 'Single', '23-03-2011', 8);
+insert into Patient values (9, 'Harry', 'Potter', '98 Diagon Alley', '876530996539', '7-06-1999', 'M', 'Married', '01-03-2011', 9);
+insert into Patient values (10, 'Jackie', 'Pollock', '92 Wonderland Alley', '153477669024', '19-04-1970', 'F', 'Single', '27-12-2008',10);
+
+
+--Drug
+insert into drug VALUES (1, 'Accutane',3,'Oral');
+insert into drug VALUES (2, 'Mevacor',1,'Intravenous');
+insert into drug VALUES (3, 'Lovaza',5,'Intramuscular');
+insert into drug VALUES (4, 'Penicillin VK',2,'Intravitreal');
+insert into drug VALUES (5, 'Percocet',4,'Nasal');
+insert into drug VALUES (6, 'Botox',2,'Oral');
+insert into drug VALUES (7, 'Diflucan',6,'Intravitreal');
+insert into drug VALUES (8, 'Zetia',5,'Intravenous');
+insert into drug VALUES (9, 'Lexapro',2,'Oral');
+insert into drug VALUES (10, 'Wellbutrin',1,'Intramuscular');
+
+-- Medication list
+-- start end, drugNumber patient number
+
+insert into medicationList VALUES ('03-02-2010', '03-02-2011', 1, 6);
+insert into medicationList VALUES ('03-02-2010', '03-02-2011', 2, 3);
+insert into medicationList VALUES ('03-02-2010', '03-02-2011', 3, 2);
+insert into medicationList VALUES ('03-02-2010', '03-02-2011', 4, 9);
+insert into medicationList VALUES ('03-02-2010', '03-02-2011', 5, 1);
+insert into medicationList VALUES ('03-02-2010', '03-02-2011', 6, 3);
+insert into medicationList VALUES ('03-02-2010', '03-02-2011', 1, 2);
+insert into medicationList VALUES ('03-02-2010', '03-02-2011', 8, 9);
+insert into medicationList VALUES ('03-02-2010', '03-02-2011', 9, 3);
+insert into medicationList VALUES ('03-02-2010', '03-02-2011', 1, 5);
+
+
+insert into requisitions values (1, 120.56, 100, 12-2-11,  13-4-11, 1,1,1);
+insert into requisitions values (2, 89.99,  230, 16-1-11,  27-4-11, 2,2,2);
+insert into Requisitions values(3, 765.00,  15, 29-11-10, 15-2-11, 3,3,3);
+insert into requisitions values(4, 675.50,  32, 30-5-09,  18-6-10, 4,4,4);
+insert into requisitions values(5, 2365.67,  7, 8-3-10,   12-1-11, 5,5,5);
+insert into requisitions values(6, 175.23,  55, 26-2-11,  4-3-11, 6,6,6);
+insert into requisitions values(7, 312.65,  48, 12-10-10, 1-2-00, 7,7,7);
+insert into requisitions values(8, 1204.82,  6, 30-8-09,  15-2-10, 8,8,8);
+insert into requisitions values(9, 539.01,  13, 5-4-11,   6-4-11, 9,9,9);
+insert into requisitions values(10, 65.01,  350, 21-4-08, 21-4-19, 10,10,10);
+
+
+
+--#INSERTS WARDSTAFF
+Insert into WardStaff values (3,1);
+Insert into WardStaff values (5,2);
+Insert into WardStaff values (1,3);
+Insert into WardStaff values (2,4);
+Insert into WardStaff values (7,6);
+Insert into WardStaff values (8,7);
+Insert into WardStaff values (9,8);
+Insert into WardStaff values (10,9);
+Insert into WardStaff values (11,10);
+Insert into WardStaff values (12,4);
+Insert into WardStaff values (13,4);
+Insert into WardStaff values (14,6);
+Insert into WardStaff values (15,7);
+
+/*  PatientAllocation (
+	id int,
+	PatientNumber int,
+	wardNo int,
+	dateOnWaitinglist datetime,
+	expectedDays int,
+	DatePlaced datetime,
+	ActualLeave datetime,
+	bedNumber int,
+*/
+
+Insert into PatientAllocation VALUES(1,1,1,'04-01-2010',78,'04-02-2010',24-08-2010,1);
+Insert into PatientAllocation VALUES(2,2,1,'03-01-2010',60,'03-02-2010','20-04-2010',2);
+Insert into PatientAllocation VALUES(3,3,1,'05-01-2010',91,'05-02-2010','25-05-2010',3);
+Insert into PatientAllocation VALUES(4,4,1,'06-01-2010',27,'04-02-2010','26-03-2010',4);
+Insert into PatientAllocation VALUES(5,5,1,'02-01-2010',82,'07-02-2010','27-05-2010',5);
+Insert into PatientAllocation VALUES(6,6,1,'20-08-2010',54,'24-08-2010','02-10-2010',1);
+Insert into PatientAllocation VALUES(7,7,1,'15-04-2010',31,'20-04-2010','23-05-2010',2);
+Insert into PatientAllocation VALUES(8,8,1,'01-05-2010',76,'27-05-2010','30-07-2010',3);
+Insert into PatientAllocation VALUES(9,9,1,'03-02-2010',87,'26-03-2010','18-05-2010',4);
+Insert into PatientAllocation VALUES(10,1,1,'27-04-2010',20,'27-05-2010','30-06-2010',5);
+Insert into PatientAllocation VALUES(11,2,1,'24-09-2010',55,'04-10-2010','11-11-2010',1);
+Insert into PatientAllocation VALUES(12,3,1,'28-04-2010',68,'25-05-2010','19-08-2010',2);
+Insert into PatientAllocation VALUES(13,4,1,'04-04-2010',15,'30-07-2010','15-08-2010',3);
+Insert into PatientAllocation VALUES(14,5,1,'29-03-2010',34,'30-05-2010','05-09-2010',4);
+Insert into PatientAllocation VALUES(15,6,1,'02-10-2010',59,'30-10-2010','08-12-2010',5);
+
+
+select * from dbo.drug
+select * from dbo.medicationList
+select * from dbo.NextOfKin
+select * from dbo.Patient
+select * from dbo.PatientAllocation
+select * from dbo.Qualifications
+select * from dbo.Requisitions
+select * from dbo.Staff
+select * from dbo.Suppliers
+select * from dbo.Ward
+select * from dbo.WardStaff
+select * from dbo.WorkExperience
