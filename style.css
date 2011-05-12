@@ -45,7 +45,9 @@ a {
 	text-decoration: none;
 	color: #82050B;
 }
-
+input type=[text]{
+  border: 2px solid blue;
+}
 a:hover {
 }
 

@@ -30,7 +30,7 @@ if($qualification || $position){
 	$query= "SELECT	s.staffNum, s.fname, s.lname, q.type, w.position FROM	Staff s, Qualifications q, WorkExperience w WHERE	s.StaffNum = q.StaffNum AND s.StaffNum = w.StaffNum AND (q.Type = '".$qualification."' OR w.Position = '".$position."')";
 } else {
 	echo "<h1>Showing all Results</h1>";
-	$query= "SELECT	s.staffNum, s.fname, s.lname, q.type, w.position FROM	Staff s, Qualifications q, WorkExperience w WHERE	s.StaffNum = q.StaffNum AND s.StaffNum = w.StaffNum ";	
+	$query= "SELECT	s.staffNum, s.fname, s.lname, s.position FROM	Staff s";	
 }
 $result = mysql_query($query);
 
@@ -38,19 +38,24 @@ echo "<table >";
 echo "<tr>
 				<th>Staff Number</th>
 				<th>First Name</th>
-				<th>Last Name</th>
-				<th>Position</th>
-				<th>Qualification Type</th>
-			</tr>";
+        <th>Last Name</th>
+				<th>Position</th>";
+if($qualification || $position){
+				echo "<th>Qualification Type</th>";
+  }
+			echo "</tr>";
 while($row = mysql_fetch_array($result)) {
   echo "<tr >";
   // Se imprimen los resultados en forma de tabla. Nótese que se concatenan los campos de cada fila
   // con etiquetas HTML de tabla, para que el resultado en pantalla sea el de celdas con información.
   echo "<td id='id'><a href='single_staff.php?staff_no=".$row['staffNum']."'>".$row['staffNum']."</a></td>
 				<td>".$row['fname']."</td>
-				<td>".$row['lname']."</td>
-				<td>".$row['position']."</td>
-				<td>".$row['type']."</td>";
+        <td>".$row['lname']."</td>
+        <td>".$row['position']."</td>";
+if($qualification || $position){
+
+				echo "<td>".$row['type']."</td>";
+}
   echo "</tr>";
 }
 echo "</table>";
