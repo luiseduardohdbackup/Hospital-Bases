@@ -69,10 +69,10 @@ $row = mysql_fetch_assoc($result);
       <ul>
         <li>
           <div id="search" >
-          <form method="get" action="../reporte.php">
+          <form method="get" action="">
             <div>
 			  <label>Buscar</label>
-              <input type="text" name="fname" id="search-text" value="" />
+              <input type="text" name="patient_no" id="search-text" value="" />
               <input type="submit" id="search-submit" value="GO" />
             </div>
           </form>

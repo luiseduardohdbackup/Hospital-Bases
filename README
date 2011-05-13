@@ -1,0 +1,45 @@
+h1.  Pendientes
+* Desplegar mensaje cuando no se encuentran resultados
+* Arreglar problema de multiples Next of Kins al crear pacientes
+* Cambiar formato de Calendario
+
+
+h2. Pendientes para entregar
+* Diagrama relacional generado por el sqlserver
+* Reportes
+  Para cada reporte
+  Incluir el SQL que lo genera
+  Incluir printscreen de la salida del query
+
+*  Descripcion de la tecnologia utilizada para desarrollar el prototipo
+   Incluir un ejemplo de codigo para:
+   - una inserción a la base de datos
+   - creación de un contrato
+   - cancelación de un contrato
+   
+h2. Anexos
+* Script SQL para crear las tablas 
+** version MySQL
+** version SQLServer
+
+A2. Script SQL para insertar registros en todas las tablas  desarrollado manualmente, no se aceptan versiones generadas por el DBMS
+A.2.1 script versión MySQL (ACTUALIZADO )
+A.2.2 script versión SQLserver (ACTUALIZADO)
+A3. Codigo donde se use transacciones (Crear contrato y cancelar contrato)
+A4. Storyboard:
+    Incluir un documento legible donde se muestren todos los screenshoots de la aplicacion
+Se entrega en un CD 
+- todo lo anterior 
+-  Codigo del Prototipo
+ 
+Prototipo:
+Dar de alta un alumno, staff, inspección e instructor (cada persona codifica uno)
+Realizar un contrato para un alumno, generando todos los pagos mensuales de fecha de inicio de contrato a fecha de fin
+ (usar transacciones)
+Cancelar un contrato 
+
+Reportes:
+  Todos los reportes deben de ejecutar en el prototipo
+
+
+

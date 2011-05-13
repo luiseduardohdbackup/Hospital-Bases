@@ -2,7 +2,9 @@
 <head>
 <title> Wellmeadows Hospital</title>
 <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/jquery-ui-1.8.12.custom.css" rel="stylesheet" type="text/css" media="screen" />
 <script src="javascript/jquery.js" type="text/javascript"></script>
+<script src="javascript/jquery-ui-1.8.12.custom.min.js" type="text/javascript"></script>
 <script src="javascript/slider.js" type="text/javascript"></script>
 <script src="javascript/application.js" type="text/javascript"></script>
 </head>
@@ -15,35 +17,44 @@
   <div id="page-bgtop">
   <div id="page-bgbtm">
     <div id="content">
-    <form method="post" action="single_patient.php">
+<script>
+	$(function() {
+		$( ".datepicker" ).datepicker({
+			changeMonth: true,
+			changeYear: true
+		});
+	});
+	</script>
+
+    <form method="post" action="create_patient.php">
 		<table id='single_info'>
 			<tr><td colspan='2' id='id'>Patient Form</td></tr>
 			<tr><td colspan='2' id='title'>Personal Details</td></tr>
 		        <tr>
-		        	<td>First Name: <input type="text"></td>
-					<td>Last Name: <input type="text"></td>					
+					<td>First Name: <input type="text" name="f_name"></td>					
+					<td>Last Name: <input type="text" name="lname"></td>					
 		        </tr>			
 						<tr>
 						<tr>
-							<td>Address: <textarea rows="4"></textarea></td>
-							<td>Sex: <input tyep="text"></td>
+							<td>Address: <textarea rows="4" name="address"></textarea></td>
+							<td>Sex: <input type="text" name="sex"></td>
 						</tr>
 						<tr>
-							<td>DOB: <input type="text"></td>
-							<td>Telephone No: <input type="text"></td>
+							<td>DOB: <input class="datepicker" type="text" name="dob"></td>
+							<td>Telephone No: <input type="text" name="telephone"></td>
 						</tr>
 						<tr>
-							<td>Date Registered: <input type="text"></td>
-							<td>Marital Status: <input type="text"></td>
+							<td>Date Registered: <input class="datepicker" type="text" name="date"></td>
+							<td>Marital Status: <input type="text" name="marital"></td>
 						</tr>
 				<tr><td colspan='2' id='title'>Next-Of-Kin Details</td></tr>		
 						<tr>
-							<td>Full Name: <input type="text"></td>
-							<td>Relationship: <input type="text"></td>
+							<td>Full Name: <input type="text" name="NOKname"></td>
+							<td>Relationship: <input type="text" name="NOKrelationship"></td>
 						</tr>
 						<tr>
-							<td>Address: <textarea rows="4"></textarea></td>
-							<td>Telephone No: <input tyep="text"></td>
+							<td>Address: <textarea rows="4" name="NOKaddress"></textarea></td>
+							<td>Telephone No: <input type="text" name="NOKtelephone"></td>
 						</tr>
 							
 						<tr>
