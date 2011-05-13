@@ -1,23 +1,23 @@
-h1.  Pendientes
-* Desplegar mensaje cuando no se encuentran resultados
-* Arreglar problema de multiples Next of Kins al crear pacientes
-* Cambiar formato de Calendario
+# Pendientes
+- Desplegar mensaje cuando no se encuentran resultados
+- Arreglar problema de multiples Next of Kins al crear pacientes
+- Cambiar formato de Calendario
 
 
-h2. Pendientes para entregar
-* Diagrama relacional generado por el sqlserver
-* Reportes
-  Para cada reporte
-  Incluir el SQL que lo genera
-  Incluir printscreen de la salida del query
+# Pendientes para entregar
+- Diagrama relacional generado por el sqlserver
+- Reportes
+- Para cada reporte
+-- Incluir el SQL que lo genera
+--Incluir printscreen de la salida del query
 
-*  Descripcion de la tecnologia utilizada para desarrollar el prototipo
+- Descripcion de la tecnologia utilizada para desarrollar el prototipo
    Incluir un ejemplo de codigo para:
    - una inserción a la base de datos
    - creación de un contrato
    - cancelación de un contrato
    
-h2. Anexos
+# Anexos
 * Script SQL para crear las tablas 
 ** version MySQL
 ** version SQLServer
