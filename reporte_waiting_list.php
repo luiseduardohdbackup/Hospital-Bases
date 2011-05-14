@@ -32,29 +32,26 @@ if ($ward_no != NULL){
 } else {
 	echo "<h2>No record found</h2>";
 }
-	echo "<ul id='inner_menu'>
-					<li><a href='reporte_forma_staff.php' class='big_link'>Show all</a></li>
-					<li><a href='reporte_forma_staff.php' class='big_link'>Show all </a></li>
-				</ul>";
-	
+
 $ward_result = mysql_query($ward_query) or die(mysql_error());
 $ward_row = mysql_fetch_assoc($ward_result);
 $result = mysql_query($query) or die(mysql_error());
 
 echo "<table id='single_info'>";
-	echo "<tr><td colspan='7' id='title'><b>Wellmeadows Hospital</br> Patient Allocation</b></td></tr>";
   echo "
         <tr>
-        	<td colspan='4'><b>Ward Number:</b> ".$ward_row['wardNumber']."</td>
-					<td colspan='4'><b>Charge Nurse:</b> ".$ward_row['Fname']." ".$ward_row['Lname']."</td>					
+        	<td colspan='5'><b>Ward Number:</b> ".$ward_row['wardNumber']."</td>
+          </tr>
+        <tr>
+					<td ><b>Charge Nurse:</b> ".$ward_row['Fname']." ".$ward_row['Lname']."</td>					
+					<td ><b>Telephone Extension:</b> ".$ward_row['telephoneExtension']."</td>
 				</tr>
 				<tr>
-					<td colspan='4'><b>Ward Name:</b> ".$ward_row['name']."</td>
-					<td colspan='4'><b>Staff Number:</b> ".$ward_row['StaffNum']."</td>
+					<td ><b>Ward Name:</b> ".$ward_row['name']."</td>
+					<td ><b>Staff Number:</b> ".$ward_row['StaffNum']."</td>
 				</tr>
 				<tr>
-					<td colspan='4'><b>Location:</b> ".$ward_row['location']."</td>
-					<td colspan='4'><b>Telephone Extension:</b> ".$ward_row['telephoneExtension']."</td>
+					<td><b>Location:</b> ".$ward_row['location']."</td>
 				</tr>
 				<tr><td colspan='7' id='title'><b>Patients in this ward</b></td></tr
 				<tr>

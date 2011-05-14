@@ -27,34 +27,6 @@
     <div style="clear: both;">&nbsp;</div>
     </div>
     <!-- end #content -->
-    <div id="sidebar">
-      <ul>
-        <li>
-          <div id="search" >
-          <form method="get" action="../reporte.php">
-            <div>
-              <input type="text" name="fname" id="search-text" value="" />
-              <input type="submit" id="search-submit" value="GO" />
-            </div>
-          </form>
-          </div>
-          <div style="clear: both;">&nbsp;</div>
-        </li>
-        <li>
-          <h2>Aliquam tempus</h2>
-          <p>Mauris vitae nisl nec metus placerat perdiet est. Phasellus dapibus semper consectetuer hendrerit.</p>
-        </li>
-        <li>
-          <h2>Categories</h2>
-          <ul>
-            <li><a href="#">Aliquam libero</a></li>
-            <li><a href="#">Consectetuer adipiscing elit</a></li>
-            <li><a href="#">Metus aliquam pellentesque</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <!-- end #sidebar -->
     <div style="clear: both;">&nbsp;</div>
   </div>
   </div>

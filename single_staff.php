@@ -29,10 +29,6 @@ if ($staff_no != NULL){
 	$q_query= "SELECT	* FROM	Staff s, Qualifications q WHERE s.StaffNum = q.StaffNum AND s.StaffNum = ".$staff_no;
 	$w_query= "SELECT	* FROM	Staff s, WorkExperience w WHERE s.StaffNum = w.StaffNum AND s.StaffNum = ".$staff_no;
 	
-	echo "<ul id='inner_menu'>
-					<li><a href='reporte_forma_staff.php' class='big_link'>Show all</a></li>
-					<li><a href='reporte_forma_staff.php' class='big_link'>Show all </a></li>
-				</ul>";
 	
 } else {
 	echo "<h2>No record found</h2>";
@@ -42,8 +38,13 @@ $result = mysql_query($s_query) or die(mysql_error());
 $row = mysql_fetch_assoc($result);
 
 echo "<table id='single_info'>";
-	echo "<tr><td colspan='2' id='id'>STAFF NUMBER: ".$row['StaffNum']."</td></tr>
-	<tr><td colspan='3' id='title'>Personal Details</td></tr>";
+echo "<tr><td colspan='4' id='id'>STAFF NUMBER: ".$row['StaffNum']."
+  <div id='table_links'>
+  <a href='reporte_forma_staff.php'>Ver Todos</a>
+  <a href='#'>Editar</a>
+  <a href='#'>Borrar</a></div>
+    </td></tr>
+	<tr><td colspan='4' id='title'>Personal Details</td></tr>";
   echo "
         <tr>
         	<td><b>First Name: </b>".$row['Fname']."</td>
@@ -71,15 +72,10 @@ echo "<table id='single_info'>";
 					<td><b>Hours/Week: </b>".$row['HoursPerWeek']."</td>
 				</tr>
 				<tr>
-					<td><b>Paid Weekly or Monthly (Enter W or M): </b>Falta</td>
 					<td><b>Permanent or Temporary (Enter P or T): </b>".$row['TypeOfEmployment']."</td>					
 				</tr>
 				<tr>
-					<td><b>Permanent or Temporary (Enter P or T): </b>".$row['TypeOfEmployment']."</td>
-					<td><b>Medicare: </b>".$row['InsuranceNumber']."</td>
-				</tr>
-				<tr>
-						<td id='title' colspan='3'>Qualifications </td>
+						<td id='title' colspan='4'>Qualifications </td>
 				</tr>
 				<tr>
 					<td><b>Type</b></td>
@@ -99,7 +95,7 @@ while($row = mysql_fetch_array($result)) {
 			}
 			
 	echo "<tr>
-				<td id='title' colspan='3'>Work Experience </td>
+				<td id='title' colspan='4'>Work Experience </td>
 				</tr>
 		<tr>
 					<td><b>Position</b></td>
@@ -126,33 +122,6 @@ echo "</table>";
 
     <div style="clear: both;">&nbsp;</div>
     </div>
-    <!-- end #content -->
-    <div id="sidebar">
-      <ul>
-	
-        <li>
-          <div id="search" >
-						<h2>Buscar:</h2>
-
-			       <form method="get" action="reporte_forma_staff.php">
-		            <div id="form">
-		              <p>
-		              	<label>Qualification: </label>
-		              	<input type="text" name="qualification" id="search-text" value="" />
-									</p>
-									<p>
-		              	<label>Position: </label>
-		              	<input type="text" name="position" id="search-text" value="" />
-									</p>
-		              <input type="submit" id="search-submit" value="Buscar" />
-		            </div>
-		          </form>
-          </div>
-          <div style="clear: both;">&nbsp;</div>
-        </li>
-      </ul>
-    </div>
-    <!-- end #sidebar -->
     <div style="clear: both;">&nbsp;</div>
   </div>
   </div>

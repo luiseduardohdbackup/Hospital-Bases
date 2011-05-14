@@ -27,34 +27,37 @@
 	</script>
 
     <form method="post" action="create_patient.php">
-		<table id='single_info'>
-			<tr><td colspan='2' id='id'>Patient Form</td></tr>
+		<table id='form_info'>
+      <tr><td colspan='2' id='id'>Patient Form
+        <div id='table_links'>
+        <a href='patients.php'>See all</a>
+      </td></tr>
 			<tr><td colspan='2' id='title'>Personal Details</td></tr>
 		        <tr>
-					<td>First Name: <input type="text" name="f_name"></td>					
-					<td>Last Name: <input type="text" name="lname"></td>					
+					<td>First Name: <input type="text" name="f_name" required="required"></td>					
+					<td>Last Name: <input type="text" name="lname" required="required"></td>					
 		        </tr>			
 						<tr>
 						<tr>
-							<td>Address: <textarea rows="4" name="address"></textarea></td>
-							<td>Sex: <input type="text" name="sex"></td>
+							<td>Address: <textarea rows="4" name="address" required="required"></textarea></td>
+							<td>Sex: <input type="text" name="sex" required="required"></td>
 						</tr>
 						<tr>
-							<td>DOB: <input class="datepicker" type="text" name="dob"></td>
-							<td>Telephone No: <input type="text" name="telephone"></td>
+							<td>DOB: <input class="datepicker" type="text" name="dob" required="required"></td>
+							<td>Telephone No: <input type="text" name="telephone" required="required"></td>
 						</tr>
 						<tr>
-							<td>Date Registered: <input class="datepicker" type="text" name="date"></td>
-							<td>Marital Status: <input type="text" name="marital"></td>
+							<td>Date Registered: <input class="datepicker" type="text" name="date" required="required"></td>
+							<td>Marital Status: <input type="text" name="marital" required="required"></td>
 						</tr>
 				<tr><td colspan='2' id='title'>Next-Of-Kin Details</td></tr>		
 						<tr>
-							<td>Full Name: <input type="text" name="NOKname"></td>
-							<td>Relationship: <input type="text" name="NOKrelationship"></td>
+							<td>Full Name: <input type="text" name="NOKname" required="required"></td>
+							<td>Relationship: <input type="text" name="NOKrelationship" required="required"></td>
 						</tr>
 						<tr>
-							<td>Address: <textarea rows="4" name="NOKaddress"></textarea></td>
-							<td>Telephone No: <input type="text" name="NOKtelephone"></td>
+							<td>Address: <textarea rows="4" name="NOKaddress" required="required"></textarea></td>
+							<td>Telephone No: <input type="text" name="NOKtelephone" required="required"></td>
 						</tr>
 							
 						<tr>
@@ -65,36 +68,6 @@
 					</table>	
     <div style="clear: both;">&nbsp;</div>
     </div>
-    <!-- end #content -->
-    <div id="sidebar">
-      <ul>
-        <li>
-          <div id="search" >
-          <form method="get" action="../reporte.php">
-            <div>
-			  <label>Mickey</label>
-              <input type="text" name="fname" id="search-text" value="" />
-              <input type="submit" id="search-submit" value="GO" />
-            </div>
-          </form>
-          </div>
-          <div style="clear: both;">&nbsp;</div>
-        </li>
-        <li>
-          <h2>Aliquam tempus</h2>
-          <p>Mauris vitae nisl nec metus placerat perdiet est. Phasellus dapibus semper consectetuer hendrerit.</p>
-        </li>
-        <li>
-          <h2>Categories</h2>
-          <ul>
-            <li><a href="#">Aliquam libero</a></li>
-            <li><a href="#">Consectetuer adipiscing elit</a></li>
-            <li><a href="#">Metus aliquam pellentesque</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <!-- end #sidebar -->
     <div style="clear: both;">&nbsp;</div>
   </div>
   </div>

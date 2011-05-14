@@ -27,14 +27,23 @@ $qualification = $_GET['qualification'];
 $position = $_GET['position'];
 if($qualification || $position){
 	echo "<h1>Results filtered by qualification type and position</h1>";
-	$query= "SELECT	s.staffNum, s.fname, s.lname, q.type, w.position FROM	Staff s, Qualifications q, WorkExperience w WHERE	s.StaffNum = q.StaffNum AND s.StaffNum = w.StaffNum AND (q.Type = '".$qualification."' OR w.Position = '".$position."')";
+	$query= "SELECT	s.staffNum, s.fname, s.lname, q.type, w.position FROM	Staff s, Qualifications q, WorkExperience w WHERE	s.StaffNum = q.StaffNum AND s.StaffNum = w.StaffNum AND (q.Type LIKE '%".$qualification."%' AND w.Position LIKE '%".$position."%')";
 } else {
-	echo "<h1>Showing all Results</h1>";
 	$query= "SELECT	s.staffNum, s.fname, s.lname, s.position FROM	Staff s";	
 }
 $result = mysql_query($query);
+echo "<div id='search_bar'><a href='#'>Search staff</a> <a href='forma_staff.php'>Create staff</a>
 
-echo "<table >";
+  <div><form action='reporte_forma_staff.php' method='get'>
+    <label>Qualification:</label>
+    <input type='text' name='qualification'>
+    <label>Position:</label>
+    <input type='text' name='position'>
+    <input type='submit'>
+    </form>
+    </div>
+  </div>";
+echo "<table id='single_info'class= 'hovering' >";
 echo "<tr>
 				<th>Staff Number</th>
 				<th>First Name</th>
@@ -48,7 +57,8 @@ while($row = mysql_fetch_array($result)) {
   echo "<tr >";
   // Se imprimen los resultados en forma de tabla. Nótese que se concatenan los campos de cada fila
   // con etiquetas HTML de tabla, para que el resultado en pantalla sea el de celdas con información.
-  echo "<td id='id'><a href='single_staff.php?staff_no=".$row['staffNum']."'>".$row['staffNum']."</a></td>
+  echo "<td id='id'><a href='single_staff.php?staff_no=".$row['staffNum']."'>".$row['staffNum']."
+                    </a><a style='float:right;' href='delete_staff.php?staff_no=".$row['staffNum']."'>X</a></td>
 				<td>".$row['fname']."</td>
         <td>".$row['lname']."</td>
         <td>".$row['position']."</td>";
@@ -64,32 +74,6 @@ echo "</table>";
     <div style="clear: both;">&nbsp;</div>
     </div>
     <!-- end #content -->
-    <div id="sidebar">
-      <ul>
-	
-        <li>
-          <div id="search" >
-						<h2>Buscar:</h2>
-
-			       <form method="get" action="reporte_forma_staff.php">
-		            <div id="form">
-		              <p>
-		              	<label>Qualification: </label>
-		              	<input type="text" name="qualification" id="search-text" value="" />
-									</p>
-									<p>
-		              	<label>Position: </label>
-		              	<input type="text" name="position" id="search-text" value="" />
-									</p>
-		              <input type="submit" id="search-submit" value="Buscar" />
-		            </div>
-		          </form>
-          </div>
-          <div style="clear: both;">&nbsp;</div>
-        </li>
-      </ul>
-    </div>
-    <!-- end #sidebar -->
     <div style="clear: both;">&nbsp;</div>
   </div>
   </div>

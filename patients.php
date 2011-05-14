@@ -1,4 +1,5 @@
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title> Wellmeadows Hospital</title>
@@ -12,7 +13,7 @@
   <?php  include_once('partials/mysql_init.php' ); ?>
 <div id="wrapper">
   <?php  include_once('partials/header.html' ); ?>
-	<script>$('#menu ul li.wards').addClass("current_page_item");</script>
+	<script>$('#menu ul li.patients').addClass("current_page_item");</script>
 
   <div id="page">
   <div id="page-bgtop">
@@ -24,25 +25,44 @@
 
 //Por medio de if se hacen comparaciones para determinar el query a realizar
 //Si el query seleccionado fue el 1, simplemente se muestra el contenido de la tabla employee.
-	$ward_query = "SELECT * FROM Ward";
-	
+$fname = $_GET['fname'];
+$lname = $_GET['lname'];
+
+if($fname || $lname) {
+	echo "<h1>Results filtered by first and last name</h1>";  
+	$ward_query = "SELECT * FROM Patient WHERE fname LIKE'%".$fname."%' AND lname LIKE'%".$fname."%'";
+} else{
+	$ward_query = "SELECT * FROM Patient";
+}
 $result = mysql_query($ward_query) or die(mysql_error());
 
+echo "<div id='search_bar'>
+  <a href='#'>Search for patient</a>
+  <a href='forma_patient.php'>Create patient</a>
+  <div><form action='patients.php' method='get'>
+    <label>First name:</label>
+    <input type='text' name='fname'>
+    <label>Last name:</label>
+    <input type='text' name='lname'>
+    <input type='submit'>
+    </form>
+    </div>
+  </div>";
 echo "<table id='single_info'class= 'hovering' >";
 echo "<tr>
-				<th>Ward number</th>
-				<th>Name</th>
-				<th>Location</th>
-        <th>Total number of beds </th>
-				<th>Telephone extension</th>";
+				<th>Patient number</th>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Gender</th>
+        <th>Date registered</th>";
 				
 while($row = mysql_fetch_array($result)) {
   echo "<tr >";
-  echo "<td id='id'><a href='single_ward.php?ward_no=".$row['wardNumber']."'>".$row['wardNumber']."</a></td>
-				<td>".$row['name']."</td>
-        <td>".$row['location']."</td>
-        <td>".$row['totalNumberBeds']."</td>
-        <td>".$row['telephoneExtension']."</td>
+  echo "<td id='id'><a href='single_patient.php?patient_no=".$row['PatientNumber']."'>".$row['PatientNumber']."</a></td>
+        <td>".$row['Fname']."</td>
+        <td>".$row['Lname']."</td>
+        <td>".$row['Gender']."</td>
+        <td>".$row['DateRegistered']."</td>
         </tr>";
 }
 

@@ -217,10 +217,9 @@ a:hover {
 /* Content */
 
 #content {
-	float: right;
 	position:relative;
 	width: 580px;
-	padding: 30px 0px 0px 0px;
+	padding: 10px 0px 0px 0px;
 }
 
 .post {
@@ -394,8 +393,6 @@ a:hover {
 
 /* Added by us */
 
-ul#inner_menu {position:absolute;top:-5px;right:-50;}
-ul#inner_menu li {display:inline;list-style:none;padding-right:20px;}
 ul li .big_link {
 	padding:10px;
 	background: #ccc;
@@ -410,18 +407,12 @@ ul li .big_link {
 #full_width{
 	margin-left:0px;
 }
-
-
-table {
-
-  padding: 10px;
-}
-table td{
-  padding:10px;
-}
-table tr.content{background:#2c89a0;}
-
+#search_bar {padding:20px;}
+#search_bar a{ padding:10px 20px 10px 20px; background:#ccc;}
+#search_bar form{padding-top:40px;width: 600px;}
 #single_info {
+  padding: 10px;
+  width:970px;
   border-spacing: 0;
 	border:2px solid black;
 	-webkit-border-radius:10px;
@@ -430,24 +421,50 @@ table tr.content{background:#2c89a0;}
 	color: #2a2a2a;
 	font-size:1.2em;
   background: #fafafa;
-  background-image: -moz-linear-gradient(top, #fff, #eaeaea, #fff); /* Firefox 3.6 */
-  background-image: -webkit-gradient(linear,center bottom,center top,from(#fff),color-stop(0.5, #eaeaea),to(#fff));
+}
+#form_info{
+  padding: 10px;
+  width:430px;
+  border-spacing: 0;
+	border:2px solid black;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+	color: #2a2a2a;
+	font-size:1.2em;
+  background: #fafafa;
+
 }
 
-#single_info td {
-  height: 50px;
-  line-height: 50px;
-  padding: 0 8px;
+#form_info td input, #form_info td textarea { float:right;}
+#single_info td, #form_info td {
+  padding:10px;
   border-bottom: 1px solid #cdcdcd;
+  border-right: 1px solid #cdcdcd;
   box-shadow: 0 1px 0 white;
   -moz-box-shadow: 0 1px 0 white;
   -webkit-box-shadow: 0 1px 0 white;
   white-space: nowrap;
-  text-align: center;
 }
-#single_info #title {background:#333; color:white; text-decoration:none; font-weight:normal;}
+#single_info.hovering tr:hover {background:#333;color:#fff;}
+#single_info #title, #form_info #title {background:#333; color:white; text-decoration:none; font-weight:normal;}
 
+#table_links{
+  float:right;
+}
 
+#table_links a{
+  padding:10px;
+}
+
+#table_links a:hover{
+  background:#333;
+  color:#f6f6f6;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  border-radius:5px;
+
+}
 
 
 /*Slider*/

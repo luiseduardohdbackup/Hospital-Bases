@@ -1,4 +1,5 @@
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title> Wellmeadows Hospital</title>
@@ -17,7 +18,7 @@
   <div id="page">
   <div id="page-bgtop">
   <div id="page-bgbtm">
-    <div id="content">
+    <div id="full_width">
 	
 <?php
 //Por medio de $_GET se obtiene el tipo de query seleccionado en la forma anterior.
@@ -26,8 +27,8 @@
 //Si el query seleccionado fue el 1, simplemente se muestra el contenido de la tabla employee.
 $ward_no = $_GET['ward_no'];
 if ($ward_no != NULL){
-	$ward_query = "SELECT	* FROM	Requisitions r, Ward w WHERE	r.WardNo = w.wardNumber AND r.WardNo =".$ward_no;
-	$query= "SELECT	* FROM	Requisitions r, Supplies ss WHERE ss.itemNumber = r.ItemNo AND r.WardNo =".$ward_no;
+	$ward_query = "SELECT * FROM Ward WHERE wardNumber =".$ward_no;
+	$query= "SELECT	* FROM	Staff s, WardStaff wf WHERE	s.StaffNum = wf.staffNo AND wf.wardNo = ".$ward_no;
 } else {
 	echo "<h2>No record found</h2>";
 }
@@ -36,32 +37,49 @@ $ward_result = mysql_query($ward_query) or die(mysql_error());
 $ward_row = mysql_fetch_assoc($ward_result);
 $result = mysql_query($query) or die(mysql_error());
 
+echo "<div id='search_bar'>
+  <a href='reporte_requisition_ward.php?ward_no=".$ward_no."'>See requisitions from this ward!</a>
+  <a href='reporte_waiting_list.php?ward_no=".$ward_no."'>See waiting list from this ward!</a>
+  </div>";
+
 echo "<table id='single_info'>";
   echo "
-        <tr>
-        <td colspan='6'><b>Ward Number:</b> ".$ward_row['WardNo']."
+       <tr>
+       <td colspan='7'><b>Ward Number:</b> ".$ward_row['wardNumber']."
+       
   <div id='table_links'>
-  <a href='single_ward.php?ward_no=".$ward_row['WardNo']."'> Back to ward</a>
-        </td> 
-		</tr>
-      	
-				<tr><td colspan='6' id='title'>Supplies</td></tr
+  <a href='wards.php'>See all</a>
+  </div>
+       </td>
+          </tr>
+       <tr>
+					<td><b>Charge Nurse:</b> ".$ward_row['chargeNurse']."</td>					
+					<td><b>Telephone Extension:</b> FALTA</td>
+				</tr>
 				<tr>
-					<td><b>Order Date</b></td>
-					<td><b>Item No</b></td>
+					<td><b>Ward Nam:</b> ".$ward_row['name']."</td>
+					<td><b>Staff Number:</b> FALTA</td>
+				</tr>
+				<tr>
+					<td><b>Location:</b> ".$ward_row['location']."</td>
+				</tr>
+				<tr><td colspan='6' id='title'>Staff in this Ward</td></tr
+				<tr>
+					<td><b>Staff No</b></td>
 					<td><b>Name</b></td>
-					<td><b>Description</b></td>
-					<td><b>Cost per Unit</b></td>
-					<td><b>Quantity</b></td>
+					<td><b>Address</b></td>
+					<td><b>Tel No</b></td>
+					<td><b>Position</b></td>
+					<td><b>Shift</b></td>
 				</tr>";
 while($row = mysql_fetch_array($result)) {
 	echo "<tr>
-					<td>".$row['OrderDate']."</td>
-					<td id='id'><a href='reporte_supplies.php?item_no=".$row['itemNumber']."'>".$row['itemNumber']."</a></td>
-					<td>".$row['itemName']."</td>
-					<td>".$row['description']."</td>
-					<td>".$row['CostPerUnit']."</td>
-					<td>".$row['QtyRequired']."</td>
+					<td style='widh:4px;'>".$row[StaffNum]."</td>
+					<td>".$row[Fname]." ".$row[Lname]. "</td>
+					<td id='big_cell'>".$row[Address]."</td>
+					<td>".$row[Telephone]."</td>
+					<td>".$row[Position]."</td>
+					<td>FALTA</td>
 				</tr>
 				
 				";
@@ -71,11 +89,11 @@ while($row = mysql_fetch_array($result)) {
 				
 echo "</table>";
 ?>
-	
+
     <div style="clear: both;">&nbsp;</div>
     </div>
     <!-- end #content -->
-
+ 
     <div style="clear: both;">&nbsp;</div>
   </div>
   </div>

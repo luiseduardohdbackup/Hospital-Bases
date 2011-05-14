@@ -23,15 +23,17 @@ if ($patient_no != NULL){
 } else {
 	echo "<h2>No record found</h2>";
 }
-	echo "<ul id='inner_menu'>
-					<li><a href='reporte_forma_staff.php' class='big_link'>Show all</a></li>
-					<li><a href='reporte_forma_staff.php' class='big_link'>Show all </a></li>
-				</ul>";
+
 	
 $result = mysql_query($query) or die(mysql_error());
 $row = mysql_fetch_assoc($result);
 
-  echo "<tr><td colspan='2' id='id'>PATIENT NUMBER: ".$row['PatientNumber']."</td></tr>
+echo "<tr><td colspan='2' id='id'>PATIENT NUMBER: ".$row['PatientNumber']."
+  <div id='table_links'>
+  <a href='patients.php'>See all</a>
+  <a href='#'>Edit</a>
+  <a href='#'>Delete</a></div>
+  </td></tr>
 			<tr><td colspan='2' id='title'>Personal Details</td></tr>
 		        <tr>
 		        	<td>First Name:".$row['Fname']." </td>
@@ -65,35 +67,7 @@ $row = mysql_fetch_assoc($result);
     <div style="clear: both;">&nbsp;</div>
     </div>
     <!-- end #content -->
-    <div id="sidebar">
-      <ul>
-        <li>
-          <div id="search" >
-          <form method="get" action="">
-            <div>
-			  <label>Buscar</label>
-              <input type="text" name="patient_no" id="search-text" value="" />
-              <input type="submit" id="search-submit" value="GO" />
-            </div>
-          </form>
-          </div>
-          <div style="clear: both;">&nbsp;</div>
-        </li>
-        <li>
-          <h2>Aliquam tempus</h2>
-          <p>Mauris vitae nisl nec metus placerat perdiet est. Phasellus dapibus semper consectetuer hendrerit.</p>
-        </li>
-        <li>
-          <h2>Categories</h2>
-          <ul>
-            <li><a href="#">Aliquam libero</a></li>
-            <li><a href="#">Consectetuer adipiscing elit</a></li>
-            <li><a href="#">Metus aliquam pellentesque</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <!-- end #sidebar -->
+
     <div style="clear: both;">&nbsp;</div>
   </div>
   </div>
